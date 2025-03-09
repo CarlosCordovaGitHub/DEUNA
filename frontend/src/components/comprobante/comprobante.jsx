@@ -124,7 +124,7 @@ const Comprobante = () => {
     // Renderiza el comprobante con toda la información
     return (
         <div className="comprobante-container">
-            <div className="atras">
+            <div className="atras" style={display= "none"}>
                 {/* Botón de retroceso */}
                 <img 
                     src={back} 

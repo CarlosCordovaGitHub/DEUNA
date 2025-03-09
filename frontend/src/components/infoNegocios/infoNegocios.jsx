@@ -71,12 +71,6 @@ const InfoNegocios = () => {
 
   return (
     <div className="negocio-container">
-      {/* Botón Regresar */}
-      <div className="back-button-container">
-        <button className="back-button">
-          <ChevronLeft size={20} />
-        </button>
-      </div>
       
       {/* Encabezado y Logo */}
       <div className="atras">
