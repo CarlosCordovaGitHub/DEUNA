@@ -1,3 +1,31 @@
+/**
+ * @file ChatP2P.js
+ * @description Componente de chat en tiempo real basado en WebSockets, con soporte para pagos y selección de productos.
+ * @module Chat
+ * @author [Tu Nombre]
+ * @version 1.0.0
+ * @date 2025-03-09
+ * 
+ * @requires react
+ * @requires react-router-dom
+ * @requires lucide-react
+ * @requires axios
+ * 
+ * @description
+ * Este componente proporciona una interfaz de chat en tiempo real entre dos usuarios sin autenticación ni base de datos. 
+ * Los mensajes se envían a través de un servidor WebSocket y desaparecen al cerrar la ventana. 
+ * También permite enviar productos seleccionados y realizar solicitudes de pago mediante una API externa.
+ * 
+ * ### Funcionalidades principales:
+ * - Conexión automática a un WebSocket.
+ * - Generación de un identificador único para cada usuario.
+ * - Envío y recepción de mensajes en tiempo real.
+ * - Historial de mensajes durante la sesión activa.
+ * - Envío de productos seleccionados.
+ * - Generación de solicitudes de pago con código QR.
+ * - Confirmación de pagos.
+ */
+
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { Send, MessageCircle, ShoppingCart, DollarSign } from "lucide-react";

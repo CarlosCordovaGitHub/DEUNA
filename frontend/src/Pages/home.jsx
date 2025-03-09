@@ -1,3 +1,27 @@
+/**
+ * @file Home.js
+ * @description Componente principal de la pantalla de inicio de la aplicación de pagos y transferencias.
+ * @module Home
+ * @version 1.0.0
+ * @date 2025-03-09
+ * 
+ * @requires react
+ * @requires react-router-dom
+ * 
+ * @description
+ * Este componente representa la pantalla de inicio de la aplicación, donde los usuarios pueden ver su saldo,
+ * acceder a opciones rápidas como transferencias, recargas y pagos, así como consultar promociones y acceder 
+ * a otras secciones de la aplicación mediante una barra de navegación inferior.
+ * 
+ * ### Funcionalidades principales:
+ * - Mostrar el saldo disponible del usuario.
+ * - Acceso rápido a funcionalidades como transferencias, recargas y pagos.
+ * - Banners informativos sobre promociones y pagos sin conexión.
+ * - Barra de navegación inferior para acceder a otras secciones.
+ * - Personalización con nombre del usuario.
+ */
+
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";

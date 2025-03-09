@@ -1,4 +1,16 @@
-// Modified InfoNegocios.jsx - Changes to pass selected products to Chat
+/**
+ * @file InfoNegocios.jsx
+ * @description Componente para mostrar información detallada de un negocio, incluyendo
+ * su catálogo de productos, reseñas y opciones para seleccionar productos y contactar.
+ * Permite a los usuarios explorar los productos disponibles, añadirlos a un carrito
+ * virtual y navegar hacia el chat para continuar con el proceso de contratación.
+ * 
+ * @module InfoNegocios
+ * @requires React
+ * @requires react-router-dom
+ * @requires lucide-react
+ */
+
 import React, { useState, useEffect } from "react";
 import { Button } from "../ui/button";
 import { Star, Mail, Phone, ShoppingCart, ChevronDown, ChevronUp, Check, ChevronLeft } from "lucide-react";

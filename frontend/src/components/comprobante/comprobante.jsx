@@ -1,10 +1,26 @@
+/**
+ * @file Comprobante.jsx
+ * @description Componente React para gestionar y mostrar comprobantes de pago.
+ * Este componente realiza solicitudes a la API de pagos, genera códigos QR dinámicos
+ * y muestra la información del comprobante al usuario.
+ */
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import back from "../../assets/atras.png"; 
 import { useNavigate } from "react-router-dom"; 
 import "./comprobante.css";
 
+/**
+ * Componente Comprobante
+ * 
+ * Gestiona el flujo completo de generación de códigos QR para pagos y
+ * muestra la información del comprobante una vez procesado el pago.
+ * 
+ * @returns {JSX.Element} Componente de comprobante de pago renderizado
+ */
 const Comprobante = () => {
+    // Estados para gestionar la información del comprobante
     const [transactionId, setTransactionId] = useState(null);
     const [paymentInfo, setPaymentInfo] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -26,7 +42,14 @@ const Comprobante = () => {
         format: "2",
     };
 
-    // Función para obtener el transactionId
+    /**
+     * Obtiene el ID de transacción desde la API de solicitud de pago.
+     * También recupera la imagen del código QR si está disponible.
+     * 
+     * @async
+     * @function fetchTransactionId
+     * @returns {Promise<void>}
+     */
     const fetchTransactionId = async () => {
         try {
             const response = await axios.post(API_REQUEST, requestData);
@@ -44,7 +67,14 @@ const Comprobante = () => {
         }
     };
 
-    // Función para obtener la información del pago
+    /**
+     * Obtiene la información detallada del pago usando el ID de transacción.
+     * 
+     * @async
+     * @function fetchPaymentInfo
+     * @param {string} id - ID de la transacción a consultar
+     * @returns {Promise<void>}
+     */
     const fetchPaymentInfo = async (id) => {
         try {
             const response = await axios.post(API_INFO, { idTransacionReference: id, idType: "0" });
@@ -56,6 +86,7 @@ const Comprobante = () => {
         }
     };
 
+    // Efecto para obtener el ID de transacción al montar el componente
     useEffect(() => {
         const fetchData = async () => {
             await fetchTransactionId();
@@ -63,12 +94,14 @@ const Comprobante = () => {
         fetchData();
     }, []);
 
+    // Efecto para obtener la información del pago cuando se tiene el ID de transacción
     useEffect(() => {
         if (transactionId) {
             fetchPaymentInfo(transactionId);
         }
     }, [transactionId]);
 
+    // Renderiza un indicador de carga mientras se obtienen los datos
     if (loading) return (
         <div className="comprobante-container">
             <div className="loading-container">
@@ -78,6 +111,7 @@ const Comprobante = () => {
         </div>
     );
 
+    // Renderiza un mensaje de error si ocurre algún problema
     if (error) return (
         <div className="comprobante-container">
             <div className="error-message">
@@ -87,6 +121,7 @@ const Comprobante = () => {
         </div>
     );
 
+    // Renderiza el comprobante con toda la información
     return (
         <div className="comprobante-container">
             <div className="atras">
