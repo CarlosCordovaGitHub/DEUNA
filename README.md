@@ -147,7 +147,6 @@ Este proyecto está bajo la Licencia MIT - un proyecto de código abierto desarr
 
 Si tienes preguntas o sugerencias, no dudes en contactarnos a través de:
 
-- GitHub Issues: [https://github.com/CarlosCordovaGitHub/DEUNA](https://github.com/CarlosCordovaGitHub/DEUNA)
 - Email del equipo: quijiasebastian@gmail.com, gaby.01221@gmail.com, sjaramillopuce@gmail.com, andradedilan23@gmail.com, carlos._cordova@hotmail.com, herez2002@gmail.com
 
 ---
